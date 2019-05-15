@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureWebTestClient
@@ -32,5 +34,28 @@ public class MovieControllerIT {
             .isOk()
             .expectBodyList(Movie.class)
             .hasSize(7);
+    }
+
+    @Test
+    public void getAllMovies_thanGetTheFirstMovieById() {
+
+        List<Movie> movies = webClient.get()
+            .uri(BASE_PATH)
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus()
+            .isOk()
+            .expectBodyList(Movie.class)
+            .hasSize(7)
+            .returnResult()
+            .getResponseBody();
+
+        webClient.get()
+            .uri(BASE_PATH + "/{id}", movies.get(0).getId())
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus()
+            .isOk()
+            .expectBody(Movie.class);
     }
 }
