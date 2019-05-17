@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import java.util.List;
+import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,7 +40,7 @@ public class MovieControllerIT {
     @Test
     public void getAllMovies_thanGetTheFirstMovieById() {
 
-        List<Movie> movies = webClient.get()
+        Optional<Movie> firstMovie = webClient.get()
             .uri(BASE_PATH)
             .accept(MediaType.APPLICATION_JSON)
             .exchange()
@@ -48,14 +49,19 @@ public class MovieControllerIT {
             .expectBodyList(Movie.class)
             .hasSize(7)
             .returnResult()
-            .getResponseBody();
+            .getResponseBody()
+            .stream()
+            .findFirst();
 
-        webClient.get()
-            .uri(BASE_PATH + "/{id}", movies.get(0).getId())
-            .accept(MediaType.APPLICATION_JSON)
-            .exchange()
-            .expectStatus()
-            .isOk()
-            .expectBody(Movie.class);
+        firstMovie.ifPresent(movie ->
+            webClient.get()
+                .uri(BASE_PATH + "/{id}", movie.getId())
+                .accept(MediaType.APPLICATION_JSON)
+                .exchange()
+                .expectStatus()
+                .isOk()
+                .expectBody(Movie.class)
+            );
+
     }
 }
