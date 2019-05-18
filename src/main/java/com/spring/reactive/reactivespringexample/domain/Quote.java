@@ -33,4 +33,18 @@ public class Quote {
     public Instant getInstant() {
         return instant;
     }
+
+    public Quote setInstant(Instant instant) {
+        this.instant = instant;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Quote{" +
+            "ticker='" + ticker + '\'' +
+            ", price=" + price +
+            ", instant=" + instant +
+            '}';
+    }
 }

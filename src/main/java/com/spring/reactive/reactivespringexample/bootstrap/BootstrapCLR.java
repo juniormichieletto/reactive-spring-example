@@ -2,7 +2,6 @@ package com.spring.reactive.reactivespringexample.bootstrap;
 
 import com.spring.reactive.reactivespringexample.domain.Movie;
 import com.spring.reactive.reactivespringexample.repository.MovieRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
