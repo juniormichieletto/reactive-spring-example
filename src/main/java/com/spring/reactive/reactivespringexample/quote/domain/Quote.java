@@ -1,4 +1,4 @@
-package com.spring.reactive.reactivespringexample.domain;
+package com.spring.reactive.reactivespringexample.quote.domain;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

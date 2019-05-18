@@ -1,6 +1,6 @@
-package com.spring.reactive.reactivespringexample.service;
+package com.spring.reactive.reactivespringexample.quote.service;
 
-import com.spring.reactive.reactivespringexample.domain.Quote;
+import com.spring.reactive.reactivespringexample.quote.domain.Quote;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import reactor.core.publisher.Flux;
@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
 
-public class QuoteGeneratorServiceTest {
+public class QuoteGeneratorServiceImplTest {
 
     private QuoteGeneratorService quoteGeneratorService = new QuoteGeneratorServiceImpl();
 

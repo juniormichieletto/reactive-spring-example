@@ -1,6 +1,6 @@
-package com.spring.reactive.reactivespringexample.controller;
+package com.spring.reactive.reactivespringexample.movie.controller;
 
-import com.spring.reactive.reactivespringexample.domain.Movie;
+import com.spring.reactive.reactivespringexample.movie.domain.Movie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

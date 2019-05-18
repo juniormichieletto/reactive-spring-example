@@ -1,7 +1,7 @@
 package com.spring.reactive.reactivespringexample.bootstrap;
 
-import com.spring.reactive.reactivespringexample.domain.Movie;
-import com.spring.reactive.reactivespringexample.repository.MovieRepository;
+import com.spring.reactive.reactivespringexample.movie.domain.Movie;
+import com.spring.reactive.reactivespringexample.movie.repository.MovieRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;

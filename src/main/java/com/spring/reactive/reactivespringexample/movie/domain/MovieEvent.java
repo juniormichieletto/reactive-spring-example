@@ -1,4 +1,4 @@
-package com.spring.reactive.reactivespringexample.domain;
+package com.spring.reactive.reactivespringexample.movie.domain;
 
 import java.util.Date;
 

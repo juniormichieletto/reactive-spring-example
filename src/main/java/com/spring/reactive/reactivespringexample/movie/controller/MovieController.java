@@ -1,8 +1,8 @@
-package com.spring.reactive.reactivespringexample.controller;
+package com.spring.reactive.reactivespringexample.movie.controller;
 
-import com.spring.reactive.reactivespringexample.domain.Movie;
-import com.spring.reactive.reactivespringexample.domain.MovieEvent;
-import com.spring.reactive.reactivespringexample.service.MovieService;
+import com.spring.reactive.reactivespringexample.movie.domain.Movie;
+import com.spring.reactive.reactivespringexample.movie.domain.MovieEvent;
+import com.spring.reactive.reactivespringexample.movie.service.MovieService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

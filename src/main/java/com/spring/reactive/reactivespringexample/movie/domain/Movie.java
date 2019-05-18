@@ -1,4 +1,4 @@
-package com.spring.reactive.reactivespringexample.domain;
+package com.spring.reactive.reactivespringexample.movie.domain;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -21,5 +21,13 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+            "id='" + id + '\'' +
+            ", title='" + title + '\'' +
+            '}';
     }
 }
